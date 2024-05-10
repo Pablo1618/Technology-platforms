@@ -1,0 +1,44 @@
+﻿<Window x:Class="Lab8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab8"
+        mc:Ignorable="d"
+        Title="Przegladarka plikow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Menu HorizontalAlignment="Left" Height="22" Width="60">
+            <MenuItem Header="File" Width="79" FontFamily="Yu Gothic UI Semilight" FontSize="14">
+                <MenuItem Header="Open file" Click="OpenButonClick"/>
+                <MenuItem Header="Exit" Click="ExitApplication"/>
+            </MenuItem>
+        </Menu>
+
+        <TreeView Grid.Column="0" Grid.Row="1" x:Name="TreeViewBox" SelectedItemChanged="TreeViewSelectItem" FontSize="14" FontFamily="Yu Gothic UI Semilight">
+            Witaj w programie - wybierz jedną z opcji.
+        </TreeView>
+
+        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="TextBoxForFileViewing" AcceptsReturn="True" TextWrapping="Wrap" FontSize="14" FontFamily="Yu Gothic UI Semilight"/>
+        </ScrollViewer>
+
+        <StatusBar Grid.Row="2" HorizontalAlignment="Stretch">
+            <StatusBarItem FontFamily="Yu Gothic UI Semilight" FontSize="14">
+                <TextBlock x:Name="AttributesTextBlock" FontSize="14" FontWeight="Bold"/>
+            </StatusBarItem>
+        </StatusBar>
+
+    </Grid>
+</Window>
